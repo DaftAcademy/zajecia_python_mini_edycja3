@@ -1,4 +1,4 @@
-1. coś o historii (kto i  po co pythona stworzył, skąd nazwa ~ 5 min)
+1. coś o historii (kto i  po co pythona stworzył, skąd nazwa)
 
 	Python został stworzony przez Guido van Rossum - Holendra w grudniu 1989 jako zajęcie na święta.
 	Nazwa jest od grupy Monthy Python.
