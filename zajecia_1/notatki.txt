@@ -88,7 +88,7 @@
 		>>> type(c)			<class 'float'>
 	dzielenie modulo:
 	    >>> 8 % 2        0
-        >>> 13 % 5       3
+            >>> 13 % 5       3
 	zaokrąglanie:
 		>>> int(c)			0
 		>>> int(0.8)		0
@@ -227,7 +227,7 @@
 			>>> a = {'q', 'w',  'e', 'a', 'q', 'w', 'q'}
 			>>> a			{'e', 'a', 'q', 'w'}
 
-6. Testoowanie True/False
+6. Testowanie True/False
 
 		>>> a = True
 		>>> b = False
@@ -250,7 +250,7 @@
 		>>> bool(e)			False
 		>>> bool(f)			False
 		>>> c = [0]
-		>>> d = {Flase: True}
+		>>> d = {False: True}
 		>>> e = set(c)
 		>>> f = (0, )
 		>>> bool(c)			True
