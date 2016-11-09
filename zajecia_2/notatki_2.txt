@@ -1,0 +1,90 @@
+Na początek trochę ponawijać o rozpakowywaniu tupli:
+		>>> a, b, c = (1, 2, 3)
+		>>> a		1
+		>>> b		2
+		>>> c		3
+		>>> a, b = (1, 2, 3)		ValueError: too many values to unpack (expected 2)
+		>>> a, b, c = (1, 2)		ValueError: need more than 2 values to unpack
+	-zamiana zmiennych miejscami
+		>>> a = 'a'
+		>>> b = 'b'
+		>>> a		'a'
+		>>> b		'b'
+		>>> a, b = b, a
+		>>> a		'b'
+		>>> b		'a'
+	-fajny ficzer dostępny tylko w python3
+		>>> a, *b, c = 1, 2, 3, 4, 5, 6, 7, 8, 9
+		>>> a			1
+		>>> b			[2, 3, 4, 5, 6, 7, 8]
+		>>> c			9
+	-ale można użyć tylko jednej gwiazdki
+		>>> a, *b, *c = 1, 2, 3, 4, 5, 6, 7, 8, 9		SyntaxError: two starred expressions in assignment
+
+
+Funkcje:
+	Funkcja to kawałek kodu (jedna lub więcej linii), który ma nazwę i można go wywołac po tej nazwie.
+	Zwraca pewną wartość.
+	Może (ale nie musi) przyjmować jeden (albo więcej) argument.
+	Argumenty mogą być pozycyjne albo "keyword"
+		funkcja.py
+		funkcja_return.py
+		funkcja_argumenty.py
+		funkcja_args.py
+		funkcja_keyword.py
+		funkcja_kwargs.py
+		funkcja_wszystko.py
+		funkcja_obiektem_pierwszej_kategori.py
+		
+Klasy:
+	Klasa to obiekt.
+	Klasa ma "definicję".
+	Na podstawie "definicji" można tworzyć konkretne obiekty danej klasy - instancje.
+	Klasa może mieć swoje dane i funkcje zwane metodami.
+	
+		>>> class A():				#definicja klasy
+		...     pass
+		... 
+		>>> type(A)			<class 'type'>			# sprawdzenie typu
+		>>> id(A)			43562744				# sprawdzenie adresu w pamięci "definicji" klasy - jest, a to oznacza, ze to jest obiekt!
+		>>> b = A()									# utworzenie instancji klasy
+		>>> type(b)			<class '__main__.A'>	# sprawdzenie typu
+		>>> id(b)			139637390122344			# sprawdzenie adresu w pamięci instancji klasy - inny niż "definicji" => instancja jest innym obiektem niż "definicja
+		>>> id(b)
+		>>> c = A()
+		>>> type(c)			<class '__main__.A'>
+		>>> id(c)			139637390138056			# inny adres w pamięci niż b! To znaczy, ze dwie instancje tej samej klasy są różnymi obiektami!
+		>>> b is c			False		
+
+	
+	klasa_self.py
+	klasa_init.py
+	
+	10. metody magiczne # o tym tylko wspomnę, że istnieją
+		Metody/funkcje z dwoma podkreślnikami na początku i końcu są zwane 
+		"magicznymi" (choć wcale nie są magiczne i ich działanie jest dobrze 
+		zdefiniowane).
+		Służą implementacji wielu funkcji wbudowanych i protokołów.
+		Np1: __len__ jest wywoływana przez funkcję len - służy do zwrócenia 
+			"długości" (liczby elementów) obiektu.
+		Np2: __str__ jest wywoływane przez funkcję str - służy do zrzutowania 
+			obiektu na string
+		
+		Jest wiele takich metod. Ale poza kilkoma (__init__, __str__, ...)
+		zazwyczaj wykraczają poza podstawy.
+		
+	11. Dziedziczenie
+		W python 3 każda klasa dziedziczy z klasy bazowej `object`
+		klasa_dziedziczenie.py
+		klasa_dziedziczenie_wielokrotne.py
+			Może się wydawać, że dziedziczenie wielokrotne jest super, ale ma 
+			też wady:
+				- dziedziczenie diamentowe
+		klasa_dziedziczenie_diament.py
+		
+
+     
+	
+
+
+	
