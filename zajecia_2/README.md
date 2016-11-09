@@ -27,8 +27,8 @@ Przykładowe tworzenie instancji klasy:
 
 Instancje klasy Vector powinno dać się zrzutować na stringa:
 
-# Wskazówka 1: https://docs.python.org/3/reference/datamodel.html#object.__str__
-# Wskazówka 2: https://docs.python.org/3/reference/datamodel.html#object.__repr__
+Wskazówka 1: https://docs.python.org/3/reference/datamodel.html#object.__str__
+Wskazówka 2: https://docs.python.org/3/reference/datamodel.html#object.__repr__
 
 
     >>> v = Vector(1, 2)
@@ -40,9 +40,9 @@ Instancje klasy Vector powinno dać się zrzutować na stringa:
     
 Powinno dać się porównać czy dwie różne instancje klasy wektor są sobie równe:
 
-# Wskazówka 1: https://docs.python.org/3/reference/datamodel.html#object.__eq__
+Wskazówka 1: https://docs.python.org/3/reference/datamodel.html#object.__eq__
 
-# na potrzeby tej pracy domowej proszę założyć, że operacja na wektorach o różnym wymiarze nie wystąpi
+na potrzeby tej pracy domowej proszę założyć, że operacja na wektorach o różnym wymiarze nie wystąpi
 
     >>> v1 = Vector(1, 2, 3)
     >>> v2 = Vector(1, 2, 3)
@@ -62,9 +62,9 @@ Powinno dać się porównać czy dwie różne instancje klasy wektor są sobie r
     
 Dodawanie dwóch wektorów o tym samym wymiarze powinno tworzyć nowy wektor o tym samym wymiarze:
 
-# Wskazówka: https://docs.python.org/3/reference/datamodel.html#object.__add__
+Wskazówka: https://docs.python.org/3/reference/datamodel.html#object.__add__
 
-# na potrzeby tej pracy domowej proszę założyć, że operacja na wektorach o różnym wymiarze nie wystąpi
+na potrzeby tej pracy domowej proszę założyć, że operacja na wektorach o różnym wymiarze nie wystąpi
 
     >>> v1 = Vector(1, 2)
     >>> v2 = Vector(3, 4)
@@ -79,7 +79,7 @@ Dodawanie dwóch wektorów o tym samym wymiarze powinno tworzyć nowy wektor o t
 Mnożenie wektora przez liczbę powinno dawać nowy wektor o tym samym wymiarze z 
 odpowiednio przemnożonymi "współrzędnymi":
 
-# Wskazówka: https://docs.python.org/3/reference/datamodel.html#object.__mul__
+Wskazówka: https://docs.python.org/3/reference/datamodel.html#object.__mul__
 
     >>> v = Vector(1.1, 2.2, 3, 4)
     >>> v2 = v * 6
@@ -90,7 +90,7 @@ odpowiednio przemnożonymi "współrzędnymi":
     
 Bonus: Mnożenie liczby przez wektor powinno dawać taki sam wektor jak mnożenie wektora przez liczbę:
 
-# Wskazówka: https://docs.python.org/3/reference/datamodel.html#object.__rmul__
+Wskazówka: https://docs.python.org/3/reference/datamodel.html#object.__rmul__
     
     >>> v = Vector(1.1, 2.2, 3, 4)
     >>> v2 = v * 6
