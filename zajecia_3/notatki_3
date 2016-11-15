@@ -1,0 +1,137 @@
+Wyjątki*************************************************************************
+	Wyjątki służą do przerwania wykonywanego programu z jakiegoś wyjątkowego
+	powodu, np:
+		- dzielenie przez 0
+		- błędu składni
+	Wyjątki są klasami.
+	Dziedziczą z BaseException.
+	hierarchia klas wyjątków wbudowanych jest dostępna w: 
+		https://docs.python.org/3/library/exceptions.html#exception-hierarchy
+	Można tworzyć własne wyjątki.
+	Można łapać wyjątki "wbudowane" i własne.
+	W normalnym użyciu nie powinno się łapać wyjątków poniżej `Exception`.
+	Już samo łapanie `Exception` jest uważane za niepoprawne (łapie znacznie 
+	więcej niż powinno, przez co może ukryć błędy innego rodzaju niż spodziewany)
+	
+		>>> 1/0
+		Traceback (most recent call last):
+		  File "<stdin>", line 1, in <module>
+		ZeroDivisionError: division by zero
+	
+		Ctrl + C -> KeyboardInterrupt # to też jest wyjątek
+		
+	Jeśli wystąpi wyjątek (nie złapany) to na stderr pojawi się "Traceback".
+	Jest to zrzut stosu. Innymi słowy prześledzona droga krok po kroku 
+	wykonania programu od miejsca najbliższego wyjątkowi do najbardziej 
+	zewnętrznego. Bardzo pomaga podczas debugowania programu.
+	
+	Wyrażenia `try ... except` moga byc zagnieżdżone jedno w drugim.
+	
+    wyjatek_lapanie.py
+    wyjatek_lapanie_as.py
+    wyjatek_wlasny.py
+    wyjatek_lapanie_Exception.py
+    wyjatek_lapanie_reraise.py
+
+Iteratory***********************************************************************
+Iterator to obiekt reprezentujący strumień danych.
+Iterator zwraca po jednym elemencie ze strumienia na raz.
+Iterator musi mieć metodę __next__().
+Metoda __next__ nie może przyjmować argumentów.
+Metoda __next__ musi zwracać kolejny element ze strumienia.
+Jeśli nie ma następnego elementu metoda __next__ musi rzucić wyjątek StopIteration.
+Iteratory nie muszą być skończone.
+
+Wbudowana funkcja iter() przyjmuje dowolny obiekt i próbuje zwrócić iterator
+ zwracający kolejne elementy danego obiektu.
+Funkcja iter() rzuca wyjątek TypeError, jeśli dany obiekt nie obsługuje iteracji.
+Obiekt jest iterowalny jeśli dla niego funkcja iter() zwróci iterator.
+Część wbudowanych typów danych jest iterowalna: lista, tupla, słownik, zbiory.
+
+    >>> L = [1,2,3]
+    >>> it = iter(L)
+    >>> it  
+    <...iterator object at ...>
+    >>> it.__next__()  # same as next(it)
+    1
+    >>> next(it)
+    2
+    >>> next(it)
+    3
+    >>> next(it)
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in ?
+    StopIteration
+    
+można wywołać next tak:
+    it.__next__()
+albo tak:
+    next(it)
+    
+my_iter.py #####################################################################
+
+To jest opis mniej-więcej     
+Zwykłe funkcje po zawołaniu (call - użycie ()) dostaje 'prywatną' przestrzeń nazw,
+gdzie może przechowywać swoje wewnętrzne zmienne.
+Kiedy wykonanie funkcji dochodzi do return to zmienne lokalne są niszczone,
+a wartość zwracana przekazana do miejsca wywołania.
+Kolejne zawołanie tej funkcji tworzy NOWĄ 'prywatną' przestrzeń nazw i zmienne
+lokalne też są tworzone od nowa.
+
+Generatory różnią się od funkcji tym, że wyrażenie yield przekazuje jakąś wartość
+do miejsca wywołania, ale 'prywatna' przestrzeń nie jest niszczona.
+Kolejne wywołanie tej samej funkcji zacznie się tuż po yield w STAREJ przestrzeni,
+zmienne lokalne będą miały wartości takie jak tuż przed yield. 
+Wyrażenie return zniszczy 'prywatną' przestrzeń.
+
+
+https://docs.python.org/3/howto/functional.html
+
+Wycinki były opisane na wykładzie 1.
+
+Nested list comprehension/generators:
+to:
+    ( expression for expr in sequence1
+                 if condition1
+                 for expr2 in sequence2
+                 if condition2
+                 for expr3 in sequence3 ...
+                 if condition3
+                 for exprN in sequenceN
+                 if conditionN )
+                 
+jest równoważne temu:             
+    for expr1 in sequence1:
+        if not (condition1):
+            continue   # Skip this element
+        for expr2 in sequence2:
+            if not (condition2):
+                continue   # Skip this element
+            ...
+            for exprN in sequenceN:
+                if not (conditionN):
+                    continue   # Skip this element
+                # Output the value of
+                # the expression.        
+
+my_range.py
+infinite_fib.py
+
+Operacje na plikach*************************************************************
+open()
+https://docs.python.org/3.5/glossary.html#term-file-object
+
+tryby 'r', 'w', 'a', 'b'
+
+read()
+
+close()
+
+seek()
+
+with
+
+as
+
+read_file.py
+
