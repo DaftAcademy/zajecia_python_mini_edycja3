@@ -7,12 +7,14 @@ Stworzyć skrypt, który dla danej daty pobierze wyniki losowania Lotto (dawny D
 Wyniki mają być zapisane do posortowanej listy liczb całkowitych i wyprintowane.
 Data, dla której zostaną pobrane wyniki może być zapisana w skrypcie.
 
-Prykład:
+Przykład:
+```
 data            --->        lista wyników
 wyniki losowania nr: 5715
 2015-11-28      --->        [12, 14, 18, 25, 36, 45]
 tego dnia nie było losowania
 2015-11-27      --->        []
+```
 
 Do pobrania wyników zapewne będą potrzebne dwa zapytania:
 1. GET - do otrzymania "ukrytej" wrtości formularza
