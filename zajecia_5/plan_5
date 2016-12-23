@@ -1,0 +1,45 @@
+Praca domowa *******************************************************************
+1. pokazać zadanie z iteratorem z 3 zajęć
+
+2. rozwiązanie pracy domowej z zajęć 4 (lotto)
+
+moduł datetime******************************************************************
+3. na szybkości pokazać datetime.datetime i datetime.timedelta
+
+formatowanie stringów***********************************************************
+4. Kilka przykładów, 
+    https://docs.python.org/3.5/library/string.html#format-string-syntax
+
+Omówienie co będziemy robić*****************************************************
+4. schemat URL, chyba na wikipedii był dobrze opisany
+    wikipedia: https://en.wikipedia.org/wiki/Uniform_Resource_Locator
+    
+    scheme:[//[user:password@]host[:port]][/]path[?query][#fragment]
+    
+    
+5. strona z dokumentacją API NBP: http://api.nbp.pl/
+
+6. co oznaczają tabele: 
+    A - kurs średni
+    B - kurs średni "egzotyczne" waluty
+    C - kurs kupna-sprzedaży
+    
+7. odpalenie w przeglądarce tabeli dzisiejszej - xml  
+    http://api.nbp.pl/api/exchangerates/tables/C
+    
+8. odpalenie w przeglądarce tabeli dzisiejszej - json:
+    http://api.nbp.pl/api/exchangerates/tables/C?format=json
+
+9. program do pobrania tabeli dzisiejszej, 
+10. wymuszenie json przez query i przez header
+
+11. UWAGA na limity zapytań
+
+kolejność:
+
+pobierz_tabele_dzisiejsza.py
+pobierz_tabele_dzisiejsza_query_param.py
+pobierz_tabele_dzisiejsza_odkrywamy_zawartosc.py
+wiele_tabel.py
+wiele_tabel_spread.py
+
